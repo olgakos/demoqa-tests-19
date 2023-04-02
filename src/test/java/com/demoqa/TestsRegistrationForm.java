@@ -29,27 +29,32 @@ public class TestsRegistrationForm extends TestBase {
         $("#userNumber").setValue("0123456789");
 
         //Date of Birth
-        //the best practice:
+        //the best practices:
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("1905");
         $(".react-datepicker__month-select").selectOptionByValue("3"); //3 = April!
         $(".react-datepicker__day--002").click();
 
+        /*
+        //?
+        $("#dateOfBirthInput").sendKeys(CONTROL + "A"); //в случае Windows OS поменять на CONTROL
+        $("#dateOfBirthInput").sendKeys("02.04.1905");
+        $("#dateOfBirthInput").pressEnter();
         //OR
         //?
-//        $("#dateOfBirthInput").sendKeys(Keys.COMMAND + "a"); //в случае Windows OS поменять на CONTROL
-//        $("#dateOfBirthInput").sendKeys("2 April 1905");
-//        $("#dateOfBirthInput").pressEnter();
+        $("#dateOfBirthInput").sendKeys(Keys.COMMAND + "a"); //в случае Windows OS поменять на CONTROL
+        //$("#dateOfBirthInput").sendKeys(CONTROL + "A"); //в случае Windows OS поменять на CONTROL
+        $("#dateOfBirthInput").sendKeys("2 April 1905");
+        $("#dateOfBirthInput").pressEnter();
+        */
 
         //Subjects (list)
-       $("#subjectsInput").setValue("Arts").pressEnter();
-//OR
+        $("#subjectsInput").setValue("Arts").pressEnter();
         /*
-        //Bad practise:
+        //Bad practices:
         $(".subjects-auto-complete__control").click();
         $("#subjectsInput").sendKeys("Ar"); //A = Arts
         $("#react-select-2-option-0").click(); //"Выбери позицию с индексом [0] факт№1"
-
         //OR
         $(".subjects-auto-complete__control").click();
         $("#subjectsInput").sendKeys("C"); //C = Computer science
@@ -59,7 +64,7 @@ public class TestsRegistrationForm extends TestBase {
         //Hobbies (checkbox)
         $("#hobbies-checkbox-3").parent().click(); //Music
         //OR
-//      $("[type='checkbox'][value='3']").parent().click(); //Music
+       // $("[type='checkbox'][value='3']").parent().click(); //Music
 
         //Picture
         //$("#uploadPicture").uploadFile(new File(("src/test/resources/foto.jpg")));
@@ -76,13 +81,14 @@ public class TestsRegistrationForm extends TestBase {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
 
-        //bad practice:
-//        $("#state").click();
-//        $(".css-11unzgr").$(byText("Rajasthan")).click();
-//        $("#city").click();
-//        $(".css-11unzgr").$(byText("Jaipur")).click();
-//        $(".btn-primary").click();
-
+        /*
+        //Bad practices:
+        $("#state").click();
+        $(".css-11unzgr").$(byText("Rajasthan")).click();
+        $("#city").click();
+        $(".css-11unzgr").$(byText("Jaipur")).click();
+        $(".btn-primary").click();
+        */
 
         $("#submit").click();
 
