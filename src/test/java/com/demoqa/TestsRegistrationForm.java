@@ -1,6 +1,7 @@
 package com.demoqa;
 
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -24,7 +25,7 @@ public class TestsRegistrationForm extends TestBase {
 
         //Gender (radio b)
         $("[type='radio'][value='Male']").parent().click();
-        //$("#gender-radio-1").parent().click(); //OR
+        //$("#gender-radio-1").parent().click(); //another solution
 
         $("#userNumber").setValue("0123456789");
 
@@ -32,20 +33,22 @@ public class TestsRegistrationForm extends TestBase {
         //the best practices:
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("1905");
-        $(".react-datepicker__month-select").selectOptionByValue("3"); //3 = April!
+        $(".react-datepicker__month-select").selectOptionByValue("3"); //[3] = April!
         $(".react-datepicker__day--002").click();
 
         /*
-        //?
-        $("#dateOfBirthInput").sendKeys(CONTROL + "A"); //в случае Windows OS поменять на CONTROL
-        $("#dateOfBirthInput").sendKeys("02.04.1905");
-        $("#dateOfBirthInput").pressEnter();
-        //OR
-        //?
-        $("#dateOfBirthInput").sendKeys(Keys.COMMAND + "a"); //в случае Windows OS поменять на CONTROL
-        //$("#dateOfBirthInput").sendKeys(CONTROL + "A"); //в случае Windows OS поменять на CONTROL
+        //another solutions:
+        $("#dateOfBirthInput").sendKeys(Keys.CONTROL + "a"); //NB! для Linux-Mac OS заменить CONTROL на COMMAND
+        $("#dateOfBirthInput").sendKeys("2 Apr 1905");
+        $("#dateOfBirthInput").pressEnter(); //выход из формы календаря
+
+        $("#dateOfBirthInput").sendKeys(Keys.CONTROL + "a"); //NB! для Linux-Mac OS заменить CONTROL на COMMAND
         $("#dateOfBirthInput").sendKeys("2 April 1905");
-        $("#dateOfBirthInput").pressEnter();
+        $("#dateOfBirthInput").pressEnter(); //выход из формы календаря
+
+        $("#dateOfBirthInput").sendKeys(Keys.CONTROL + "a"); //NB! для Linux-Mac OS заменить CONTROL на COMMAND
+        $("#dateOfBirthInput").sendKeys("04.02.1905"); //NB! mm/dd/yyyy
+        $("#dateOfBirthInput").pressEnter(); //выход из формы календаря
         */
 
         //Subjects (list)
@@ -53,24 +56,24 @@ public class TestsRegistrationForm extends TestBase {
         /*
         //Bad practices:
         $(".subjects-auto-complete__control").click();
-        $("#subjectsInput").sendKeys("Ar"); //A = Arts
-        $("#react-select-2-option-0").click(); //"Выбери позицию с индексом [0] факт№1"
+        $("#subjectsInput").sendKeys("Ar"); //Ar = Arts
+        $("#react-select-2-option-0").click(); //"Выбери позицию с индексом [0], факт№1"
         //OR
         $(".subjects-auto-complete__control").click();
         $("#subjectsInput").sendKeys("C"); //C = Computer science
-        $("#react-select-2-option-2").click(); //"Выбери позицию с индексом [2] факт№3"
+        $("#react-select-2-option-2").click(); //"Выбери позицию с индексом [2], факт№3"
         */
 
         //Hobbies (checkbox)
         $("#hobbies-checkbox-3").parent().click(); //Music
-        //OR
-       // $("[type='checkbox'][value='3']").parent().click(); //Music
+       // $("[type='checkbox'][value='3']").parent().click(); //another solution
 
         //Picture
-        //$("#uploadPicture").uploadFile(new File(("src/test/resources/foto.jpg")));
-        //OR
         $("#uploadPicture").uploadFromClasspath("foto.jpg");
-        //на разборе дз сегодня советовали юзать .uploadFromClasspath("foto.jpg")
+        /*
+        на разборе дз сегодня советовали юзать .uploadFromClasspath("foto.jpg")
+        $("#uploadPicture").uploadFile(new File(("src/test/resources/foto.jpg"))); //another solution
+        */
 
         //Address
         $("#currentAddress").setValue("Paris, France");
@@ -82,7 +85,7 @@ public class TestsRegistrationForm extends TestBase {
         $("#stateCity-wrapper").$(byText("Delhi")).click();
 
         /*
-        //Bad practices:
+        Bad practices:
         $("#state").click();
         $(".css-11unzgr").$(byText("Rajasthan")).click();
         $("#city").click();
