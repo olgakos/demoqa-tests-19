@@ -1,0 +1,4 @@
+
+
+Другие варианыт решений:
+https://github.com/ilyatyunin/hw2_demo_qa/blob/main/src/test/java/ru/betboom/RegistrationFormTests.java

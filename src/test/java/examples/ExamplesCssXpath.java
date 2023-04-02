@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class CssXpathExamples {
+public class ExamplesCssXpath {
 
     void cssXpathExamples() {
         // <input type="email" class="inputtext login_form_input_box" name="email" id="email" data-testid="email">
@@ -30,7 +30,7 @@ public class CssXpathExamples {
         $x("//input[@class='inputtext'][@class='login_form_input_box']").setValue("1");
 
         // <div class="inputtext">
-        //      <input type="email" class="login_form_input_box">
+        //<input type="email" class="login_form_input_box">
         // </div>
         $(".inputtext .login_form_input_box").setValue("1");
         $("div.inputtext input.login_form_input_box").setValue("1");
@@ -40,5 +40,7 @@ public class CssXpathExamples {
         $x("//div[text()='Hello, qa.guru!']").click();
         $(byText("Hello, qa.guru!")).click();
         $(withText("lo, qa.gur")).click();
+
+
     }
 }

@@ -1,18 +1,20 @@
+for the QA GURU Java course #19
+### Тема 1
 
-# QA GURU Java 19 поток
-### Тема 2
 ## Описание проекта:
-Проверка заполнения текстовой формы на странице:
+Автоматизированная проверка заполнения текстовых форм на веб-страницах.
 ```
-https://demoqa.com/text-box
 https://demoqa.com/automation-practice-form
+https://demoqa.com/text-box
 ```
 ## Как запустить проект на Windows:
-Клонировать репозиторий и перейти в него в командной строке:
+1. Клонировать репозиторий и перейти в него в командной строке:
 ```
-git clone https://github.com/olgakos/demoqa-ui-tests-selenide
-cd demoqa-ui-tests-selenide
+git clone https://github.com/olgakos/demoqa-ui-tests-java-selenide
+cd demoqa-ui-tests-java-selenide
 ```
+2. Установить и(или) запустить сборщик Gradle.
+3. Запустить тесты
 ---
 
 ## Технологии проекта

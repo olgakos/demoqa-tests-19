@@ -12,19 +12,19 @@ public class TestTextBox extends TestBase {
     void successfulFillFormTest() {
         open("/text-box");
 
-//        $("[id=userName]").setValue("Mr Smith");
-        $("#userName").setValue("Mr Smith");
+//        $("[id=userName]").setValue("Serge Lifar");
+        $("#userName").setValue("Serge Lifar");
         $("#userEmail").setValue("aa@aaa.com");
         $("#currentAddress").setValue("Some street 1");
         $("#permanentAddress").setValue("Another street 1");
         $("#submit").click();
 
         $("#output").shouldHave(
-                text("Mr Smith"),
+                text("Serge Lifar"),
                 text("aa@aaa.com"),
                 text("Some street 1"), text("Another street 1"));
 
-        $("#output #name").shouldHave(text("Mr Smith"));
+        $("#output #name").shouldHave(text("Serge Lifar"));
 
     }
 }
