@@ -1,6 +1,7 @@
 for the QA GURU Java course #19
 ### Тема 1
 ## demoqa
+![Logo](https://demoqa.com/images/Toolsqa.jpg)
 
 ## Описание проекта:
 Автоматизированная проверка заполнения данными форм на веб-страницах.
