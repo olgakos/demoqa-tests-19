@@ -1,5 +1,4 @@
-for the QA GURU Java course #19
-### Тема 1
+for the QA GURU Java course #19_1
 ## demoqa
 ![Logo](https://demoqa.com/images/Toolsqa.jpg)
 
